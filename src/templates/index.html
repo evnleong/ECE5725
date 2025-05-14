@@ -1,0 +1,91 @@
+<html>
+    <title>Smart Greenhouse Remote View</title>
+
+    <h1> Plant Live View</h1>
+
+
+    
+    <div style = "text-align:center">
+        <img src="/video_feed">
+    </div>
+    <div style = "text-align:center">
+        <p>"Say hi to your plants :D" </p>
+    </div>
+
+
+    <div>
+        <p>Greenhouse Stats:</p>
+        <p>Temperature: <span id="temp">--</span></p>
+        <p>Humidity: <span id="humidity">--</span></p>
+        <p>Light Level: <span id="light">--</span></p>
+        <p>Watered: <span id="moisture">--</span></p>
+        <!-- <p>Pump on: <span id="pump">--</span> </p> -->
+    </div>
+
+    <div>
+        <button onclick="adjustLight('increase')">Increase Light</button>
+        <button onclick="adjustLight('decrease')">Decrease Light</button>
+        <!-- <button onclick="pump_on()">Increase Humidity (0.5s)</button> -->
+
+    </div>
+
+</html>
+
+<style>
+
+body {
+    background-color: lightgreen;
+    }
+    
+h1 {
+color: black;
+text-align: center;
+font-family: verdana;
+}
+
+
+    
+p {
+font-family: verdana;
+font-size: 20px;
+}
+
+</style>
+
+<script>
+    function updateStats() {
+        fetch('/data')
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById("temp").innerText = data.temperature + "°F";
+            document.getElementById("humidity").innerText = data.humidity + "%";
+            document.getElementById("light").innerText = data.light_level + "%";
+            document.getElementById("moisture").innerText = data.moisture ;
+            // document.getElementById("pump").innerText = data.pumpStatus ;
+        });
+    }
+    
+    setInterval(updateStats, 1000);  // poll every sec
+
+
+
+    function adjustLight(action) {
+    fetch(`/light/${action}`, {
+        method: 'POST'
+    });
+    }
+
+
+    // Not working
+    // function pump_on() {
+    // fetch(`/pump_on/`, {
+    //     method: 'POST'
+    // })
+    // .then(response => response.json())
+    // .then(data => {
+    //     document.getElementById('pump').innerText = data.pumpStatus;
+    // });
+    // }
+</script>
+    
+   
