@@ -1,5 +1,6 @@
-#Class Definition for Temp and Humidity Sensor
 import Adafruit_DHT
+
+
 
 class THSensor():
 
@@ -11,9 +12,13 @@ class THSensor():
 
     def update_ht(self):
         try:
+            
             humidity, temperatureC = Adafruit_DHT.read_retry(self.sensor, self.pin)
-            temperatureF = temperatureC * (9/5) + 32 
-            return humidity,temperatureF
+            if humidity is not None and temperatureC is not None:
+                temperatureF = round(temperatureC * (9/5) + 32, 1) 
+                return humidity,temperatureF
+            else:
+                return -1,-1
         finally:
             pass
 
