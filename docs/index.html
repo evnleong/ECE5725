@@ -80,13 +80,12 @@
               <h2>Introduction</h2>
               <p style="text-align: left;padding: 0px 30px;">
                 The biggest challenges of raising plants in a dorm can be giving them the appropriate habitat to 
-                thrive in and remembering to water/care for them appropriately. The Smart Greenhouse could resolve 
-                these challenges for small to midsize plants by adjusting the temperature, humidity, and exposure to sunlight inside of the enclosure,
-                as well as allowing the user to set up all kinds of care reminders. 
-                The RPi would have to be attached to the appropriate sensors (temperature, humidity, and brightness), 
-                and the user could configure the greenhouse to maintain the desired environment using a settings panel displayed on the RPi when the plant is first placed in the greenhouse,
-                and adjust the settings as necessary at any time. The RPi could give alerts to the user on the screen to water the plants, change soil, add fertilizer, or any other kinds of 
-                care instructions according to the user's settings. </p>
+                thrive in and remembering to water/care for them appropriately. The Smart Greenhouse resolves
+                these challenges for small to midsize plants by allowing users to manually adjust the temperature, humidity, and exposure to sunlight inside of the enclosure.
+                The RPi is connected to various sensors (temperature, humidity, and brightness) in the greenhouse and 
+                allowing the user to maintain the desired environment using a settings panel displayed on the RPi when the plant is first placed in the greenhouse,
+                and adjust the settings as necessary at any time. The RPi also hosts a Flask web application that allows users on the same LAN to remotely view a camera 
+                feed of the inside of the greenhouse screen and live greenhouse environment statistics. This application also allows the user to change the sunlight exposure inside the greenhouse remotely at the press of a button. </p>
       </div>
 
     <hr id='obj'>
@@ -120,28 +119,58 @@
               <img src="assets/hardware.png" width = 500px height = 500px>
               <p style="font-weight:bold"> Hardware Layout </p>
 
-              <p style="text-align: left;padding: 0px 30px;" > The majority of electronics were placed on the top of the greenhouse. Sensors and other electronics that could not be placed on top of the greenhouse were placed inside. </p>
+              <p style="text-align: left;padding: 0px 30px;" > The majority of electronics were placed on the top of the greenhouse to isolate them from water exposure and humidity. Sensors and other electronics that could not be placed on top of the greenhouse were placed inside. </p>
 
               <p style="text-align: left;padding: 0px 30px;" > Additionally, due to the mounting location of the PiTfT screen on the edge of the greenhouse, we needed to jump the connections from the TFT screen to the Pi with individual jumper wires.
                This also freed up the unused GPIO pins to be jumped to the breadboard. </p>
-              <img src="assets/hardwaretop.jpg" width = 350px height = 500px>
+
+              <p style="text-align: left;padding: 0px 30px;" > A snapshot of the layout of the top-mounted electronics is shown below:</p>
+              
+               <img src="assets/hardwaretop.jpg" width = 350px height = 500px>
               <p style="font-weight:bold"> Hardware Layout (Top View)</p>
               <img src="assets/GreenhouseCircuitDiagram.png">
               <p style="font-weight:bold"> Hardware Layout (Circuit Diagram) </p>
               <p style="text-align: left;padding: 0px 30px; font-size:large; font-weight:bold"> TFT GUI </p>
+
+              <p style="text-align: left;padding: 0px 30px; ">The design of the greenhouse's touchscreen GUI is divided into 2 main pages -- Menu Level 1 and Menu Level 2.  </p>
             
+              <p style="text-align: left;padding: 0px 30px;">Menu Level 1 greets the user with a welcome page and prompts them to press button 17 on the TFT to begin the program. </p>
+            
+              <p  style="text-align: left;padding: 0px 30px;"> A snapshot of the welcome splash page is shown below:</p>
+              <div>
+                <img src="assets/menulevel1.png" width = 600px height = 420px>
+              </div>
+              <p style="font-weight:bold"> Smart Greenhouse GUI Menu Level 1 </p>
+
+              <p  style="text-align: left;padding: 0px 30px;"> Upon entering Menu Level 2, the user can monitor current environmental metrics inside the greenhouse including Temperature, Humidity, Soil Moisture, and set light level.</p>
+
+              <p  style="text-align: left;padding: 0px 30px;"> Additionally, entering this preview activates the web server, allowing users to view the Web GUI concurrently. </p>
+              
+              <p  style="text-align: left;padding: 0px 30px;"> Menu Level 2 also utilizes all 4 of the onboard TFT buttons, which enable the user to increase and decrease brightness, toggle the humidity pump on for .5s, and to quit the program. </p>
+
+              <p  style="text-align: left;padding: 0px 30px;"> In initial concept designs of the TFT GUI, we planned to have a live camera preview drawn on the TFT screen to run alongside the remote camera preview. After much testing however, this feature was removed and isolated to just the Web GUI -- the reasoning for this change is further discussed in the Testing section, but an initial benefit of this choice is additional 
+                space for larger text options to make the GUI more accessible and reduce the number of nested menus needed to display the same amount of information.</p>
+              
               <div>
                 <img src="assets/RpiGUI.png" width = 600px height = 600px>
               </div>
 
-              <p style="font-weight:bold"> Smart Greenhouse GUI Menu Level 2  </p>
+              <p style="font-weight:bold"> Smart Greenhouse GUI Menu Level 2 </p>
             
-              <p style="text-align: left;padding: 0px 30px; font-size:large; font-weight:bold"> Web GUI  </p>
+              <p style="text-align: left;padding: 0px 30px; font-size:large; font-weight:bold"> Web GUI </p>
 
               <p style="text-align: left;padding: 0px 30px;"> The web GUI was designed to be a replica of the GUI implemented on the PiTFT. </p>
 
-              <p style="text-align: left;padding: 0px 30px;"> The GUI showcases a 640px X 480px preview of the Raspberry Pi Camera feed.</p>
+              <div>
+                <img src="assets/plantliveview.png" width = 800px height = 500px>
+              </div>
 
+              <p style="text-align: left;padding: 0px 30px;"> The GUI showcases a 640x480 px preview of the Raspberry Pi Camera 2 feed.</p>
+
+
+              <div>
+                <img src="assets/plantstats.png" width = 800px height = 500px>
+              </div>
 
               <p style="text-align: left;padding: 0px 30px; font-size:large; font-weight:bold"> Hydroponic Tower </p>
               <p style="text-align: left;padding: 0px 30px; "> Referencing multiple YouTube Videos on hydroponic tower design, I designed a 5-plant hydroponic tower
