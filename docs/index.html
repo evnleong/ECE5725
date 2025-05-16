@@ -165,7 +165,8 @@
                 <img src="assets/plantliveview.png" width = 800px height = 500px>
               </div>
 
-              <p style="text-align: left;padding: 0px 30px;"> The GUI showcases a 640x480 px preview of the Raspberry Pi Camera 2 feed.</p>
+              <p style="text-align: left;padding: 0px 30px;"> The GUI showcases a 640x480 px preview of the Raspberry Pi Camera 2 feed alongside all 4 of the monitored metrics displayed on the PiTFT which are updated in real time from the sensor data aggregated by the Pi every 1s.</p>
+              <p style="text-align: left;padding: 0px 30px;"> The web GUI also displays 2 buttons which allow the user to interact with the light remotely, sending a POST request to the Flask web application endpoints to decrease or increase the duty cycle sent to the greenhouse light. </p>
 
 
               <div>
@@ -222,8 +223,36 @@
       <div style="text-align:center;">
               <h2>Testing</h2>
               <p style="text-align: left;padding: 0px 30px;">The modularity of our system and code design allowed us to use a fairly simple, iterative testing strategy, in which we implemented each component separately first in order to understand its use, and then progressively added them together. For example, once we were able to connect to the piCam and take short pictures and preview videos, we began integrating the live feed into a pygame screen so that the user could monitor the plant from the piTFT screen, and finally, we placed this live stream on the website instead so that the camera adds to the remote monitoring feature. The video below shows the second stage of this process, where the piCam stream was placed on the piTFT screen along with an early version of our GUI. </p>
-              <iframe src="https://drive.google.com/file/d/1-CQN1Q4RhxIYHPMHCZzvtFiXJDYxLwrz/preview" width="640" height="480" allow="autoplay" allowfullscreen></iframe>
+             
               <p style="text-align: left;padding: 0px 30px;">To test our hardware components, we would first wire them to the breadboard as close to the expected circuit as possible, but use the power supply and oscilloscope instead to protect the RPi in case our circuit was wired incorrectly. After we verified that the component would operate as expected using the power supply and oscilloscope, we would then connect the circuit to the RPi, and then we began on the code to operate the component as necessary.</p>
+              <p style="text-align: left;padding: 0px 30px;"> Testing first began with getting the UV grow light controlled via the Raspberry Pi. After wiring the grow light with the MOSFET according to our circuit diagram, we were able to cycle through preset duty cycles using the pigpio library
+                 to alter the brightness level of the growlight. </p>
+
+                 <iframe src="https://drive.google.com/file/d/1uzJa2jJCIbsXwpQj7wj4NM1u0VSmbdHH/preview" width="640" height="480" allow="autoplay" allowfullscreen></iframe>
+
+              <p style="text-align: left;padding: 0px 30px;"> Next, I moved onto getting the camera preview displayed on the PiTFT screen. Our initial design was to allow the user to view a live camera feed of the inside of the greenhouse from the screen.
+                 Only after adding on the same live camera functionality for the web GUI did i quickly realized it was not possible to have both the PiTFT and Flask application accessing the camera's frame buffer concurrently. Thus we made the decision to prioritize isolating the camera functionality to the web GUI. 
+                 This made more sense for the final design as users who are near enough to the greenhouse to view the PiTFT screen can monitor the plant through the clear acrylic enclosure.  </p>
+
+              <p style="text-align: left;padding: 0px 30px;"> Below is a video of that functionality before it was removed in favor of the Web GUI feed:</p>
+
+              <iframe src="https://drive.google.com/file/d/1-CQN1Q4RhxIYHPMHCZzvtFiXJDYxLwrz/preview" width="640" height="480" allow="autoplay" allowfullscreen></iframe>
+             
+
+
+              <p style="text-align: left;padding: 0px 30px;"> After getting the camera feed functional and adding more functionality to the GUI, I created a new class for light control cod and integrated it into the main GUI control python script, allowing for control of the light via the PiTFTs button interface instead of a standalone Python script. </p>
+
+              <p style="text-align: left;padding: 0px 30px;"> Below is a video of that initial integration testing:</p>
+              <iframe src="https://drive.google.com/file/d/1zl1Bb6V97TQIgy0feIrlpFWl4gHQ4Ieo/preview" width="640" height="480" allow="autoplay" allowfullscreen></iframe>
+
+              <p style="text-align: left;padding: 0px 30px;"> This same process of creating classes and iteratively testing followed for the pump, all sensors, as well as the integration of the Web GUI. </p>
+
+              <p style="text-align: left;padding: 0px 30px;"> Getting the main GUI control script to run concurrently with the Flask application was another challenge that took a significant amount of time due to issues with Python's threading module and Flask, but after much trial and error we were able to get the following preview working:</p>
+
+              <iframe src="https://drive.google.com/file/d/1-OaLR3SjPtjqskZoUNa0IetQy0L-clmJ/preview" width="640" height="480" allow="autoplay"></iframe>
+
+
+            
       </div>
 
     <hr id='result'>
