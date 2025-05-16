@@ -109,28 +109,69 @@
 
       <div style="text-align:center;">
               <h2>Design</h2>
-              <p style="text-align: left;padding: 0px 30px; font-weight:bold"> Hardware </p>
-              <p style="text-align: left;padding: 0px 30px; font-weight:bold"> TFT GUI </p>
-            <div>
-              <img src="assets/RpiGUI.png" width = 500 height = 500>
-            </div>
-            <p style="font-weight:bold"> Smart Greenhouse GUI Menu Level 2  </p>
-              <p style="text-align: left;padding: 0px 30px; font-weight:bold"> Web GUI  </p>
-              <p style="text-align: left;padding: 0px 30px; font-weight:bold"> Hydroponic Tower </p>
-              <p></p>
+              <p style="text-align: left;padding: 0px 30px; font-size:large; font-weight:bold"> Electrical Hardware </p>
 
+              <p style="text-align: left;padding: 0px 30px; " > The hardware chosen for this project included a 5V UV grow light, a 5V DC water pump, an AC water pump for the hydroponics tower,
+                 a temperature and humidity sensor, and a capacitive soil moisture sensor.</p>
+
+              <p style="text-align: left;padding: 0px 30px; " > Because the UV grow light pulls more current than the GPIO pins of the RPi 4B are capable of supplying, we also needed a MOSFET when supplying power to the light.</p>
+              <p style="text-align: left;padding: 0px 30px; " > Similarly, the 5V DC water pump could also not be powered directly from the Pi, so we controlled it with a relay and powered it from a separate power supply.</p>
+
+              <img src="assets/hardware.png" width = 500px height = 500px>
+              <p style="font-weight:bold"> Hardware Layout </p>
+
+              <p style="text-align: left;padding: 0px 30px;" > The majority of electronics were placed on the top of the greenhouse. Sensors and other electronics that could not be placed on top of the greenhouse were placed inside. </p>
+
+              <p style="text-align: left;padding: 0px 30px;" > Additionally, due to the mounting location of the PiTfT screen on the edge of the greenhouse, we needed to jump the connections from the TFT screen to the Pi with individual jumper wires.
+               This also freed up the unused GPIO pins to be jumped to the breadboard. </p>
+              <img src="assets/hardwaretop.jpg" width = 350px height = 500px>
+              <p style="font-weight:bold"> Hardware Layout (Top View)</p>
+
+              <p style="text-align: left;padding: 0px 30px; font-size:large; font-weight:bold"> TFT GUI </p>
+            
+              <div>
+                <img src="assets/RpiGUI.png" width = 600px height = 600px>
+              </div>
+
+              <p style="font-weight:bold"> Smart Greenhouse GUI Menu Level 2  </p>
+
+
+            
+              <p style="text-align: left;padding: 0px 30px; font-size:large; font-weight:bold"> Web GUI  </p>
+              <p style="text-align: left;padding: 0px 30px; font-size:large; font-weight:bold"> Hydroponic Tower </p>
+              <p style="text-align: left;padding: 0px 30px; "> Referencing multiple YouTube Videos on hydroponic tower design, I designed a 5-plant hydroponic tower
+              using Autodesk Inventor and Cura Slicer with dimensions that could fit our greenhouse enclosure (9" x 10.5" x 14"). </p>
+
+              
+              <p> Below is a picture of the final product printed in white PLA by RPl:</p>
+
+              <div style ="text-align: center;">
+                <img src="assets/tower.png" width = 600 height = 300>
+              </div>
+              <p style="font-weight:bold"> Hydroponic Tower CAD </p>
+              
+              <p style="text-align: left;padding: 0px 30px;"> For the rain plate and lid for the hydroponics tower, I referenced designs uploaded on <a href="https://www.printables.com/model/1255278-tiny-hydroponics-tower">Printables.com</a> and scaled them up to fit the custom hydroponic tower: </p>
+                
+              <p style="text-align: left;padding: 0px 30px;">  Below is a picture of the rain plate and lid for the tower.</p>
+
+              <div style ="text-align: center;">
+                <img src="assets/lid.png" width = 500 height = 300>
+                <img src="assets/rainplate.png" width = 500 height = 300>
+              </div>
+              <p style="font-weight:bold"> Hydroponic Tower Rainplate (Inventor) </p>
+
+              <p style="text-align: left;padding: 0px 30px;"> And below is the final assembly used to check tolerancing and fit of the parts before sending the .STLs to RPL for printing:</p>
               <div style ="text-align: center;">
                 <img src="assets/assembly.png " class="img-fluid" width = 500 height = 300>
-
               </div>
+              <p style="font-weight:bold"> Hydroponic Tower Final Assembly (Inventor) </p>
              
-              <div style ="text-align: center;">
-                <img src="assets/tower.png" width = 500 height = 300>
-              </div>
+             
+           
+
+             
               
-              <div style ="text-align: center;">
-               <img src="assets/lid.png" width = 500 height = 300>
-             </div>
+         
       </div>
 
     <hr id='drawings'>
@@ -145,6 +186,7 @@
       <div style="text-align:center;">
               <h2>Testing</h2>
               <p style="text-align: left;padding: 0px 30px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum lorem nulla, consectetur at leo vel, pretium bibendum nisl. Cras blandit quam a enim ultrices, eu convallis enim posuere. Donec eleifend enim sed purus consectetur, vitae cursus lectus varius. Vivamus consectetur felis nec est venenatis posuere. Phasellus vitae aliquet erat. In laoreet lacinia mollis. Quisque iaculis nisl fermentum pharetra lobortis. Donec rhoncus dui sem, ac molestie leo tristique vel. Phasellus in nibh feugiat, fringilla lectus in, elementum magna. Etiam quis dui condimentum, tempus ex in, dapibus est. Cras ut congue augue. Donec ac enim ex. Ut id tristique risus, vel porttitor quam. Sed ultricies enim eu nibh porttitor, vel sodales enim feugiat. Fusce volutpat venenatis magna ac ultrices. Curabitur eget urna ut nulla mattis convallis non eu diam.</p>
+              <iframe src="https://drive.google.com/file/d/1-CQN1Q4RhxIYHPMHCZzvtFiXJDYxLwrz/preview" width="640" height="480" allow="autoplay" allowfullscreen> </iframe>
       </div>
 
     <hr id='result'>
@@ -187,9 +229,11 @@
               <p class="lead">epl44@cornell.edu</p>
               <li>Designed and implemented RPi GUI</li>
               <li>Designed and implemented Web GUI </li>
+              <li>Created hardware and GUI report diagrams </li>
+              <li>Wired and tested sensors and hardware</li>
               <li>CAD and 3D Printing of Hydroponic Tower & Netpots</li>
-              <li>Wired and tested grow light</li>
-              <li>Design, Code Appendix, and Testing report sections</li>
+              <li>Design, Code Appendix, Testing, and Future Work report sections</li>
+              
           </div>
           <div class="col-md-6" style="font-size:16px">
               <img class="img-rounded" src="assets/CCRT24HeadshotCrop.JPG" alt="Vidhi Srivastava" width="240" height="240">
@@ -228,6 +272,7 @@
           <a href="https://github.com/EbenKouao/pi-camera-stream-flask/blob/master/camera.py">Pi Camera v2 to Flask Stream</a><br>
           <a href="https://randomnerdtutorials.com/raspberry-pi-pinout-gpios/">RPi Pinout </a><br>
           <a href="https://forums.adafruit.com/viewtopic.php?p=655083">Adafruit Forums </a><br>
+          <a href="https://www.printables.com/model/1255278-tiny-hydroponics-tower">Printables</a>
           <a href="http://abyz.co.uk/rpi/pigpio/">Pigpio Library</a><br>
           <a href="https://sourceforge.net/p/raspberry-gpio-python/wiki/Home/">RPi GPIO Documentation</a><br>
 
