@@ -192,17 +192,17 @@
     <hr id='result'>
 
       <div style="text-align:center;">
-              <h2>Result</h2>
-              <p style="text-align: left;padding: 0px 30px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum lorem nulla, consectetur at leo vel, pretium bibendum nisl. Cras blandit quam a enim ultrices, eu convallis enim posuere. Donec eleifend enim sed purus consectetur, vitae cursus lectus varius. Vivamus consectetur felis nec est venenatis posuere. Phasellus vitae aliquet erat. In laoreet lacinia mollis. Quisque iaculis nisl fermentum pharetra lobortis. Donec rhoncus dui sem, ac molestie leo tristique vel. Phasellus in nibh feugiat, fringilla lectus in, elementum magna. Etiam quis dui condimentum, tempus ex in, dapibus est. Cras ut congue augue. Donec ac enim ex. Ut id tristique risus, vel porttitor quam. Sed ultricies enim eu nibh porttitor, vel sodales enim feugiat. Fusce volutpat venenatis magna ac ultrices. Curabitur eget urna ut nulla mattis convallis non eu diam.</p>
+              <h2>Results</h2>
+              <p style="text-align: left;padding: 0px 30px;">Our greenhouse, while we weren't able to implement every feature exactly as planned due to various time/logistics constraints discussed below, is able to efficiently regulate the conditions inside to ensure a safe and comfortable space to grow for many kinds of plants with diverse needs using the two growth methods. The greenhouse can monitor the temperature, humidity, brightness level, and soil moisture of a potted plant, report these conditons using a remote web app, manually control the brightness and humidity, remotely control the brightness, supply a camera feed of the inside of the greenhouse, and support plant growth in a standard pot or in a hydroponic tower.</p>
       </div>
 
     <hr>
 
     <hr id='conclusions'>
-
     <div style="text-align:center;">
             <h2>Conclusions</h2>
-            <p style="text-align: left;padding: 0px 30px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum lorem nulla, consectetur at leo vel, pretium bibendum nisl. Cras blandit quam a enim ultrices, eu convallis enim posuere. Donec eleifend enim sed purus consectetur, vitae cursus lectus varius. Vivamus consectetur felis nec est venenatis posuere. Phasellus vitae aliquet erat. In laoreet lacinia mollis. Quisque iaculis nisl fermentum pharetra lobortis. Donec rhoncus dui sem, ac molestie leo tristique vel. Phasellus in nibh feugiat, fringilla lectus in, elementum magna. Etiam quis dui condimentum, tempus ex in, dapibus est. Cras ut congue augue. Donec ac enim ex. Ut id tristique risus, vel porttitor quam. Sed ultricies enim eu nibh porttitor, vel sodales enim feugiat. Fusce volutpat venenatis magna ac ultrices. Curabitur eget urna ut nulla mattis convallis non eu diam.</p>
+            <p style="text-align: left;padding: 0px 30px;">We ran into many logistical and time constraints over the course of this project. This project was very hardware-intensive and required a slightly different skillset than we expected initially. For example, implementing the pumps to create humidity control was far more difficult than we anticipated, because we initially believed that we could insert small water atomizer nozzles along the tubing so that we could create mist in the greenhouse for a short period. However, we found that not only would the pumps need to be submerged for the entire period of use, the nozzles required more water pressure than either pump could feasibly supply without rattling/movement of the pump in the water container, so we had to pivot to using the extra sponges to create vapor pressure over time inside of the greenhouse. Neither of us had used a relay before, and ran into an issue where the relay would turn on any time the program began. We found after much investigation that the 3.3V GPIO output of the RPi was too low to properly close the relay during operation, so we needed to use a level shifter to increase the input into the relay control signals to a 5V maximum. 
+            </p>
     </div>
 
     <hr id='futurework'>
@@ -212,13 +212,13 @@
             <p style="text-align: left; padding: 0px 30px;">Other than addressing the issues with the project discussed above, we originally thought of many ways to expand on our project and provide even more functionality for the users.
             <li style="text-align: left; padding: 0px 30px;"><b>Plant Care Database:</b> We planned to allow the user to set custom automatic care routines for the plant in the greenhouse using care data from a database, but we struggled to find a database that suited our needs. The US Plants Database maintained by the Forest Service is currently offline, the USDA PLANTS Database maintained by the Natural Resources Conservation Service provides non-standardized plant care data in PDFs alone, and the Garden.Org plants database has some standardization and is the most usable of the three, but provides information in a manner that cannot be easily translated into a care routine for our greenhouse (i.e. describing plants as humidity tolerant/resistant rather than the preferred amount of humidity). </li>
             <li style="text-align: left; padding: 0px 30px;"><b>Automatic Care Routines:</b> We also planned for the user to be able to set up reminders/notifications about when their plants required watering, additional humidity, increased/decreased heat, and automatically turn the lights on/off. This feature is the most natural next step, as the program's ability to track the real date/time facilitates this. However, we found testing this feature to be incredibly cumbersome, as we would need to run and monitor the system uninterrupted for several hours at a time, and besides the logistical difficulties, the RPi would often get concerningly warm after over ~an hour of continuous operation. We would likely need to use a larger/additional microcontroller for this feature, as well as appropriate heatsinks.</li>
-            <li style="text-align: left; padding: 0px 30px;"><b>Remote Pump Control:</b>  Another feature we hoped to be able to implement was the ability to increase humidity in the greenhouse via the Web GUI, but ultimately we were unable to add this feature due to time constraints. This feature would supplement the ability to adjust brightness in the greenhouse, and would also add the ability to remotely monitor pump status (on/off)</li>
+            <li style="text-align: left; padding: 0px 30px;"><b>Remote Pump Control:</b>  Another feature we hoped to be able to implement was the ability to increase humidity in the greenhouse via the Web GUI, but ultimately we were unable to add this feature due to time constraints. This feature would supplement the ability to adjust brightness in the greenhouse and would also add the ability to monitor pump status (on/off) remotely. We also planned to include automatic watering, which would work similarly to the remote humidity control, but we found that the pumps we had initially selected would not allow for this feature to be implemented reasonably as the pumps move a much larger volume of water than we realized and caused many leaks, which put some of our electronics inside the greenhouse (ie. temperature/humidity sensor, soil moisture sensor) at risk of being wet. </li>
             </p>
     </div>
 
   <hr>
 
-    <div class="row" style="text-align:center;">
+    <div class="row" style="text-align:left;">
           <h2>Work Distribution</h2>
           <div class="col-md-6" style="font-size:16px">
               <img class="img-rounded" src="assets/a.jpg" alt="Evan Leong" width="240" height="240">
@@ -226,20 +226,22 @@
               <p class="lead">epl44@cornell.edu</p>
               <li>Designed and implemented RPi GUI</li>
               <li>Designed and implemented Web GUI </li>
-              <li>Created hardware and GUI report diagrams </li>
+              <li>Created hardware and GUI report diagrams</li>
               <li>Wired and tested sensors and hardware</li>
               <li>CAD and 3D Printing of Hydroponic Tower & Netpots</li>
               <li>Design, Code Appendix, Testing, and Future Work report sections</li>
               
           </div>
           <div class="col-md-6" style="font-size:16px">
-              <img class="img-rounded" src="assets/CCRT24HeadshotCrop.JPG" alt="Vidhi Srivastava" width="240" height="240">
+              <img class="img-rounded" src="assets/CCRT24HeadshotCrop.png" alt="Vidhi Srivastava" width="240" height="240">
               <h3>Vidhi</h3>
               <p class="lead">vs356@cornell.edu</p>
               <li>Drew up project concept and work plan/progress</li>
+              <li>Designed and implemented RPi GUI</li>
               <li>Wired and tested sensors and hardware</li>
               <li>Tested overall system & executed parts return</li>
-              <li>Design, Testing, and Future Work report sections</li>
+              <li>Created hardware and GUI report diagrams</li>
+              <li>Design, Testing, Results, Conclusions, and Future Work report sections</li>
           </div>
       </div>
 
