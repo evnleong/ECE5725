@@ -221,8 +221,9 @@
 
       <div style="text-align:center;">
               <h2>Testing</h2>
-              <p style="text-align: left;padding: 0px 30px;">The modularity of our system and code design allowed us to use a fairly simple, iterative testing strategy, in which we implemented each component separately first in order to understand its use, and then progressively added them together.</p>
-              <iframe src="https://drive.google.com/file/d/1-CQN1Q4RhxIYHPMHCZzvtFiXJDYxLwrz/preview" width="640" height="480" allow="autoplay" allowfullscreen> </iframe>
+              <p style="text-align: left;padding: 0px 30px;">The modularity of our system and code design allowed us to use a fairly simple, iterative testing strategy, in which we implemented each component separately first in order to understand its use, and then progressively added them together. For example, once we were able to connect to the piCam and take short pictures and preview videos, we began integrating the live feed into a pygame screen so that the user could monitor the plant from the piTFT screen, and finally, we placed this live stream on the website instead so that the camera adds to the remote monitoring feature. The video below shows the second stage of this process, where the piCam stream was placed on the piTFT screen along with an early version of our GUI. </p>
+              <iframe src="https://drive.google.com/file/d/1-CQN1Q4RhxIYHPMHCZzvtFiXJDYxLwrz/preview" width="640" height="480" allow="autoplay" allowfullscreen></iframe>
+              <p style="text-align: left;padding: 0px 30px;">To test our hardware components, we would first wire them to the breadboard as close to the expected circuit as possible, but use the power supply and oscilloscope instead to protect the RPi in case our circuit was wired incorrectly. After we verified that the component would operate as expected using the power supply and oscilloscope, we would then connect the circuit to the RPi, and then we began on the code to operate the component as necessary.</p>
       </div>
 
     <hr id='result'>
