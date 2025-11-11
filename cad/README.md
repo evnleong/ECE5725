@@ -31,17 +31,17 @@ The following files have been modified/redistributed under the Creative Commons 
 + ### Net_Pot.stl
     + Author: [mraiser](https://www.thingiverse.com/mraiser/designs)
     + Title: EZ-Print 2 inch net pots for hydroponics
-    + Link: [https://www.thingiverse.com/thing:240034]()
+    + Link: [https://www.thingiverse.com/thing:240034](https://www.thingiverse.com/thing:240034)
 
 + ### Tower_Lid.stl
     + Author: [@ArcVerdi_1219327](https://www.printables.com/@ArcVerdi_1219327)
     + Title: Tiny Hydroponics Tower
-    + Link: [https://www.printables.com/model/1255278-tiny-hydroponics-tower/files]()
+    + Link: [https://www.printables.com/model/1255278-tiny-hydroponics-tower/files](https://www.printables.com/model/1255278-tiny-hydroponics-tower/files)
 
 + ### Tower_Rain_Plate.stl
     + Author: [@ArcVerdi_1219327](https://www.printables.com/@ArcVerdi_1219327)
     + Title: Tiny Hydroponics Tower
-    + Link: [https://www.printables.com/model/1255278-tiny-hydroponics-tower/files]()
+    + Link: [https://www.printables.com/model/1255278-tiny-hydroponics-tower/files](https://www.printables.com/model/1255278-tiny-hydroponics-tower/files)
 
 
 
